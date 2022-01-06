@@ -6,7 +6,7 @@ Expansion ROM for the Amstrad CPC range of computers. Provides similar functiona
 
 |FORTUNE
   
-Displays a random quote from the ROM. The quote can be writted to a string variable by passing a pointer to the variable as a parameter. The string variable must be initialised with a length long enough to contain the quote otherwise the quote will be truncated (probabaly the easiest way to do this is to use the SPACE$ function with 255 as the parameter). If the string is longer than the quote then it will automatically be shortened.
+Displays a random quote from the ROM. The quote can be writted to a string variable by passing a pointer to the variable as a parameter. The variable must be initialised with a string long enough to contain the quote otherwise the quote will be truncated, to be safe the length should ideally be 255. (Probabaly the easiest way to do this is to use the SPACE$ function e.g. n$=SPACE$(255) followed by |FORTUNE,@n$.) If the string length will automatically be shortened to match the length of the quote.
   
 |COWSAY
   
