@@ -2,7 +2,7 @@
 
 Expansion ROM for the Amstrad CPC range of computers. Provides similar functionality to the Fortune and Cowsay programs for Unix-like operating systems.
 
-# Commands:
+# RSX Commands:
 
 |FORTUNE
   
