@@ -19,9 +19,12 @@ Identical to COWSAY but displays cow with a thought bubble instead of a speech b
 # Examples:
 
 |COWSAY,"Hello, World!"
+
   
 10 n$=SPACE$(255)
+
 20 |FORTUNE,@n$
+
 30 PRINT n$
 
 Assembled using WinAPE's built-in Z80 assembler.
