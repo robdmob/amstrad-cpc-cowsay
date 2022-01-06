@@ -1,8 +1,8 @@
 LINEWIDTH equ 36
 
 read "firmware.asm"
-;write "../ROM/COWSAY.ROM"
-write direct -1,5
+write "COWSAY.ROM"
+
 limit #ffff
 org #c000
 checksum reset
