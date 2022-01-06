@@ -14,7 +14,7 @@ Displays an ASCII-art cow with a speech bubble. If a string is passed as a param
   
 |COWTHINK
   
-Identical to COWSAY but displays cow with a thought bubble instead of a speech bubble.
+Identical to COWSAY except the speech bubble is a thought bubble.
     
 # Examples:
 
