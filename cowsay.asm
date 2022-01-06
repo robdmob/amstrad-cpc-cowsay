@@ -1,7 +1,8 @@
-line_size equ 36
+LINEWIDTH equ 36
 
 read "firmware.asm"
-write "../rom/cowsay.rom"
+;write "../ROM/COWSAY.ROM"
+write direct -1,5
 limit #ffff
 org #c000
 checksum reset
@@ -15,7 +16,7 @@ checksum reset
 	jp fortune
 
 name_table:
-	str "COWSAY ROM"
+	str "Cowsay ROM"
 	str "COWSAY"
 	str "COWTHINK"
 	str "FORTUNE"
@@ -134,9 +135,9 @@ bubble_get_string:
 
 bubble_width:
 	ld d,a
-	cp line_size
+	cp LINEWIDTH
 	jr c,bubble_start
-	ld a,line_size
+	ld a,LINEWIDTH
 
 bubble_start:
 	ld c,a	
@@ -170,7 +171,7 @@ bubble_line_end:
 	call TXT_OUTPUT
 
 	ld a,c
-	cp line_size
+	cp LINEWIDTH
 	jr nz,call_crlf
 	call SCR_GET_MODE
 call_crlf:
@@ -195,27 +196,29 @@ crlf:
 	ld a,10
 	call TXT_OUTPUT
 	ld a,13
-	call TXT_OUTPUT
-	ret
+	jp TXT_OUTPUT
 
 ;---- SHARED ----------------------------------------------------------------------------------------------
 
 get_fortune:
 	call KL_TIME_PLEASE
-	ld a,h
-	and %00000011
+	ld a,%00000011
+	and h
 	ld h,a
 	add hl,hl
 	add hl,hl
 	add hl,hl
 	add hl,hl
-	ld de,fortune_data_start
-	add hl,de
 	ex de,hl
-	ld hl,0-fortune_data_end
+	ld hl,fortune_data_start-fortune_data_end
 	add hl,de
-	jr c,get_fortune
-	ex de,hl
+	jr nc,num_ok
+	ld a,%00000001
+	and d
+	ld d,a
+num_ok:
+	ld hl,fortune_data_start
+	add hl,de
 find_start:
 	ld a,(hl)
 	or a
@@ -262,9 +265,9 @@ footer:
 ;---- FORTUNE DATA ----------------------------------------------------------------------------------------------
 
 fortune_data_start:
+
 incbin "fortunes.bin"
 
 fortune_data_end:
-	db 0
-	ds #fffe-fortune_data_end,#ff
+	ds #ffff-fortune_data_end,#ff
 	db checksum()
