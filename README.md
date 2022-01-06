@@ -2,7 +2,7 @@
 
 Expansion ROM for the Amstrad CPC range of computers. Provides similar functionality to the Fortune and Cowsay programs for Unix-like operating systems.
 
-# RSX Commands:
+# RSX Commands
 
 |FORTUNE
   
@@ -16,7 +16,7 @@ Displays an ASCII-art cow with a speech bubble. If a string is passed as a param
   
 Identical to COWSAY except the speech bubble is a thought bubble.
     
-# Examples:
+# Examples
 
 |COWSAY,"Hello, World!"
 
