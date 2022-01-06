@@ -30,4 +30,5 @@ Identical to COWSAY but displays cow with a thought bubble instead of a speech b
 Assembled using WinAPE's built-in Z80 assembler.
 
 Quotes taken from Shlomi Fish's collection at https://www.shlomifish.org/humour/fortunes/
+
 Original Cowsay program by Tony Monroe
