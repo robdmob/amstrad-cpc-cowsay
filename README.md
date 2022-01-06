@@ -21,7 +21,9 @@ Expansion ROM for the Amstrad CPC range of computers. Provides similar functiona
   |COWSAY,"Hello, World!"
   
   10 n$=SPACE$(255)
+  
   20 |FORTUNE,@n$
+  
   30 PRINT n$
 
 Assembled using WinAPE's built-in Z80 assembler.
