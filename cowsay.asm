@@ -1,8 +1,8 @@
 LINEWIDTH equ 36
 
 read "firmware.asm"
-;write "../ROM/COWSAY.ROM"
-write direct -1,5
+write "../ROM/COWSAY.ROM"
+;write direct -1,5
 limit #ffff
 org #c000
 checksum reset
@@ -245,7 +245,7 @@ skip_lf
 ;---- DATA ----------------------------------------------------------------------------------------------
 
 rom_message:
-	db " Fortune & Cowsay ROM ",164,"2022 Rob Dixon",13,10,0
+	db " Fortune & Cowsay ROM",13,10,0
 
 cowsay_header:
 	db "        \    __ ",13
