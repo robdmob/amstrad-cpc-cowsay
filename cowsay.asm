@@ -1,11 +1,9 @@
 LINEWIDTH equ 36
 
 read "firmware.asm"
-write "../ROM/COWSAY.ROM"
-;write direct -1,5
-limit #ffff
+save "COWSAY.ROM",#c000,#4000
+
 org #c000
-checksum reset
 
 	db 1,1,0,0 
 	dw name_table
@@ -247,17 +245,19 @@ skip_lf
 rom_message:
 	db " Fortune & Cowsay ROM",13,10,0
 
+charset '^',160
+
 cowsay_header:
-	db "        \    __ ",13
-	db "         \",0
+	db "        \\   ^__^",13
+	db "         \\",0
 
 cowthink_header:
-	db "        o    __ ",13
+	db "        o   ^__^",13
 	db "         o",0
 
 footer:
-  	db "  (oo)\_______",13
-	db "            (__)\       )\/\",13
+  	db "  (oo)\\_______",13
+	db "            (__)\\       )\\/\\",13
 	db "                ||----w |",13
 	db "                ||     ||",13,0
 
@@ -269,5 +269,7 @@ fortune_data_start:
 incbin "fortunes.bin"
 
 fortune_data_end:
-	ds #ffff-fortune_data_end,#ff
-	db checksum()
+
+	ds #ffff-fortune_data_end,#00
+
+summem #c000,#ffff

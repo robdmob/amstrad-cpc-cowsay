@@ -27,7 +27,7 @@ Identical to COWSAY except the speech bubble is a thought bubble.
 
 30 PRINT n$
 
-Assembled using WinAPE's built-in Z80 assembler.
+Use RASM to assemble https://github.com/EdouardBERGE/rasm
 
 Quotes taken from Shlomi Fish's collection at https://www.shlomifish.org/humour/fortunes/
 
