@@ -27,7 +27,7 @@ Identical to COWSAY except the speech bubble is a thought bubble.
 
 30 PRINT n$
 
-Use RASM to assemble https://github.com/EdouardBERGE/rasm
+To assemble use RASM from https://github.com/EdouardBERGE/rasm
 
 Quotes taken from Shlomi Fish's collection at https://www.shlomifish.org/humour/fortunes/
 
