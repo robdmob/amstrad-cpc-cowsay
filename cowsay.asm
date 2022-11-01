@@ -217,13 +217,10 @@ get_fortune:
 num_ok:
 	ld hl,fortune_data_start
 	add hl,de
-find_start:
-	ld a,(hl)
-	or a
-	jr z,found_start
-	dec hl
-	jr find_start
-found_start:
+	xor a
+	ld bc,0
+	cpdr
+	inc hl
 	inc hl
 	ret
 
@@ -247,17 +244,17 @@ rom_message:
 if ROM_MARK > 9
 	db ROM_MARK / 10 + '0'
 endif
-	db ROM_MARK mod 10 + '0'
+	db ROM_MARK % 10 + '0'
 	db '.'
 if ROM_VERS > 9
 	db ROM_VERS / 10 + '0'
 endif
-	db ROM_VERS mod 10 + '0'
+	db ROM_VERS % 10 + '0'
 	db '.'
 if ROM_MODI > 9
 	db ROM_MODI / 10 + '0'
 endif
-	db ROM_MODI mod 10 + '0'	
+	db ROM_MODI % 10 + '0'	
 	db 13,10,0
 
 charset '^',160
