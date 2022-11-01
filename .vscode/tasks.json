@@ -4,9 +4,9 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "rasm",
+            "label": "make",
             "type": "shell",
-            "command": "rasm cowsay.asm",
+            "command": "make",
             "problemMatcher": [],
             "group": {
                 "kind": "build",
