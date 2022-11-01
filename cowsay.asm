@@ -1,11 +1,11 @@
 LINEWIDTH equ 36
 
 read "firmware.asm"
-save "COWSAY.ROM",#c000,#4000
+save "cowsay.rom",#c000,#4000
 
 org #c000
 
-	db 1,1,0,0 
+	db 1,ROM_MARK,ROM_VERS,ROM_MODI 
 	dw name_table
 
 	jp init_rom
@@ -243,7 +243,22 @@ skip_lf
 ;---- DATA ----------------------------------------------------------------------------------------------
 
 rom_message:
-	db " Fortune & Cowsay ROM",13,10,0
+	db " Fortune & Cowsay v"
+if ROM_MARK > 9
+	db ROM_MARK / 10 + '0'
+endif
+	db ROM_MARK mod 10 + '0'
+	db '.'
+if ROM_VERS > 9
+	db ROM_VERS / 10 + '0'
+endif
+	db ROM_VERS mod 10 + '0'
+	db '.'
+if ROM_MODI > 9
+	db ROM_MODI / 10 + '0'
+endif
+	db ROM_MODI mod 10 + '0'	
+	db 13,10,0
 
 charset '^',160
 
