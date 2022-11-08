@@ -2,7 +2,7 @@
 
 Expansion ROM for the Amstrad CPC range of computers. Provides similar functionality to the Fortune and Cowsay programs for Unix-like operating systems.
 
-See the Releases page to download the ROM image.
+To assemble, use RASM from https://github.com/EdouardBERGE/rasm or you can download the ROM file from the Releases page.
 
 # RSX Commands
 
@@ -28,8 +28,6 @@ Identical to COWSAY except the speech bubble is a thought bubble.
 20 |FORTUNE,@n$
 
 30 PRINT n$
-
-To assemble use RASM from https://github.com/EdouardBERGE/rasm
 
 Quotes taken from Shlomi Fish's collection at https://www.shlomifish.org/humour/fortunes/
 
