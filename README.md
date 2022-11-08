@@ -1,8 +1,12 @@
+
+
 # CPC Cowsay
 
 Expansion ROM for the Amstrad CPC range of computers. Provides similar functionality to the Fortune and Cowsay programs for Unix-like operating systems.
 
 To assemble, use RASM from https://github.com/EdouardBERGE/rasm or you can download the ROM file from the Releases page.
+
+![alt text](https://github.com/robdmob/CPC-cowsay/blob/main/cowsay.png?raw=true)
 
 # RSX Commands
 
