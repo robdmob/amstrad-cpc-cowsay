@@ -1,6 +1,6 @@
 LINEWIDTH equ 36
 
-read "firmware.asm"
+include "firmware.asm"
 save "cowsay.rom",#c000,#4000
 
 org #c000
